@@ -67,9 +67,9 @@ body {
     transition: color .5s ease-out;
 }
 
-.item-title:hover {
+/* .item-title:hover {
     color: black;
-}
+} */
 
 .item-input {
     width: 0;
@@ -107,9 +107,9 @@ body {
     height: 300px;
 }
 
-.accord-container:hover .accordion .accordion-item .item-title {
+/* .accord-container:hover .accordion .accordion-item .item-title {
     color: black;
-}
+} */
 
 .select {
     background-image: url(assets/img/open.svg);
@@ -154,7 +154,17 @@ body {
     background-image: url(assets/img/mems5.png);
 }
 
-@media (max-width: 850px) {
+@media (min-width: 820px) {
+    .accord-container:hover .accordion .accordion-item .item-title {
+        color: black;
+    }
+
+    .item-title:hover {
+        color: black;
+    }
+}
+
+@media (max-width: 820px) {
     .accordion-item:hover  .item-body{
         height: 200px;
     }

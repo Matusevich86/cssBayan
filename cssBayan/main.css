@@ -58,6 +58,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     cursor: pointer;
     font-size: x-large;
     font-weight: bold;
@@ -74,7 +75,7 @@ body {
     width: 0;
     height: 0;
     appearance: none;
-    position: absolute;
+    display: none;
 }
 
 .item-input:checked ~ .item-title {
@@ -90,15 +91,17 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: 0.55s opacity, 0.55s visibility, 0.55s height;
+    flex-basis: 100%;
+    background-position: center;
 }
 
-.item-input:checked ~ .item-body {
+.item-input:checked + .item-title .item-body {
     opacity: 1;
     visibility: visible;
     height: 300px;
 }
 
-.accordion-item:hover > .item-body{
+.accordion-item:hover  .item-body{
     opacity: 1;
     visibility: visible;
     height: 300px;
@@ -127,6 +130,10 @@ body {
     background-image: url(assets/img/close.svg);
 }
 
+.label-title {
+    flex-basis: 90%;
+}
+
 .mems1 {
     background-image: url(assets/img/mems1.png);
 }
@@ -145,4 +152,63 @@ body {
 
 .mems5 {
     background-image: url(assets/img/mems5.png);
+}
+
+@media (max-width: 850px) {
+    .accordion-item:hover  .item-body{
+        height: 200px;
+    }
+
+    .item-input:checked + .item-title .item-body {
+        height: 200px;
+    }
+
+    .item-title {
+        font-size: large;
+    }
+
+    .title-accord {
+        font-size: x-large;
+    }
+
+    .select {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 425px) {
+    .accordion-item:hover  .item-body{
+        height: 100px;
+    }
+
+    .item-input:checked + .item-title .item-body {
+        height: 100px;
+    }
+
+    .item-body {
+        width: 100%;
+        background-position: center;
+    }
+
+    .select:first-child {
+        padding-right: 15px;
+    }
+
+    .item-title {
+        font-size: medium;
+    }
+
+    .title-accord {
+        font-size: large;
+    }
+
+    .select {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .label-title {
+        flex-basis: 70%;
+    }
 }
